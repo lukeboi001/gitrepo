@@ -25,6 +25,8 @@ void ascii(char tab[], int roz) {
         kod = (int)tab[i];
         if (kod > 96 && kod < 123)
             cout << (char)(kod-32) << " ";
+        else if (kod > 64 && kod < 91)
+            cout << (char)(kod+32) << " ";
         else
             cout << (int)tab[i] << " ";
     }
