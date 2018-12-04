@@ -13,7 +13,21 @@
 using namespace std;
 
 void drukujw(int stopien, float tbwsp[]) {
-    for
+    int i = 0;
+    for(i = 0; i < stopien; i++) {
+        cout << tbwsp[i] << "x^" << stopien-i << "+";
+    
+    }
+    cout << tbwsp[i];
+}
+
+float horner_it(float x, int stopien, float tbwsp[]) {
+    float wynik = tbwsp[0];
+    for (int i = 1; i <= st; i++) {
+        wynik = wynik * x + tbwsp[i];
+    
+    }
+    return wynik;
 }
 
 int main(int argc, char **argv)
@@ -33,8 +47,9 @@ int main(int argc, char **argv)
     cout << "Podaj argument: ";
     cin >> x;
     
-    cout << "Wartość wielomianu o postaci: "
+    cout << "Wartość wielomianu o postaci: ";
     drukujw(stopien, tbwsp);
+    cout << "wynosi: " << horner_it(x, stopien, tbwsp) << endl;
 	return 0;
 }
 
