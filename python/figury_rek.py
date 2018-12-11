@@ -23,7 +23,7 @@ def main(args):
     turtle.speed(5)
     turtle.begin_fill()
     
-    figura_rek(100, 150, 50, 10)
+    figura_rek(300, 90, 4, 4)
     
     turtle.end_fill()
     turtle.done()
