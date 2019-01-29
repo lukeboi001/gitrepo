@@ -42,9 +42,18 @@ int szukaj_lin(int tab[], int n, int szuk) {
 
 }
 
-int wyszukaj_bin(int tab[], int n, int szuk) {
-    
+int szukaj_bin_it(int tab[], int n, int szuk) {
+    int p, k, s;
+    p = 0;
+    k = n - 1;
+    while (p <= k) {
+        s = (p + k) / 2;
+        if (tab[s] == szuk) return s;
+        else if (szuk < tab[s]) k = s - 1;
+        else p = s + 1;
     }
+    return -1;
+}
 
 int main(int argc, char **argv)
 {
@@ -55,9 +64,12 @@ int main(int argc, char **argv)
     int szuk = 0;
     cout << "Podaj szukany element: "; cin >> szuk;
     int indeks;
-    indeks = szukaj_lin(tab, n , szuk);
-    cout << "\Indeks
-    if (szukaj_lin(tab, n, szuk))
+    // indeks = szukaj_lin(tab, n , szuk);
+    sort_insert(tab, n);
+    drukuj(tab, n);
+    indeks = szukaj_bin_it(tab, n, szuk);
+    cout << "\nIndeks :"  << indeks << "\n";
+    if (indeks != -1)
         cout << "Znaleziono";
     else
         cout << "Nie znaleziono";
